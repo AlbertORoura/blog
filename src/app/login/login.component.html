@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+        <div>&nbsp;</div>
+        <label>Entorno:</label>
+        <select id="entornos" name="entorno">
+            <option>Selecciona un entorno...</option>
+            <option value="0">DEV1</option>
+            <option value="1">Pro</option>
+        </select>
+        <div id="resto-form" style="display: none;">
+            <label>Entorno:</label>
+            <select id="entornos" name="entorno"></select>
+            <input type="submit" value="enviar" />
+        </div>
+        <div>
+            <label>Email:</label>&nbsp;
+            <input type="text" />
+        </div>
+        <div class="row">
+            <label>Password:</label>
+            <input type='text'
+            [(ngModel)]='password2'/>
+        </div>
+        <div class="col-md-4">Encoding password in base64: {{passwordEncripted}}</div>
+        <p>&nbsp;</p>
+        <button class="btn btn-primary" (click)='GetToken()'> Get Token </button>
+        <p>&nbsp;</p>
+        <div>
+            <h3><strong>Chuleta invitaciones</strong></h3>
+            <ul>
+                <li>Estado de invitaciones:
+                    <ul>
+                        <li>Pending = 1</li>
+                        <li>Active = 2</li>
+                        <li>PendingToAccept = 3</li>
+                        <li>PendingToValidate = 4</li>
+                        <li>Rejected = 5</li>
+                        <li>Unlinking = 6</li>
+                    </ul>
+                </li>
+                <li>Invitation type:
+                    <ul>
+                        <li>Admin = 1</li>
+                        <li>Guest = 2</li>
+                        <li>Advisor = 3</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<div class="panel panel-primary">
+  <div class='panel-heading'>
+      {{pageTitle}}
+  </div>
+  <div class='panel-body'>
+    <div class='row'>
+        <div class='col-md-2'>Código del ticket:</div>
+        <div class='col-md-4'>
+            <input type='text' [(ngModel)]='ticketCode' />
+        </div>
+    </div>
+    <div class='row'>
+        <!--div class='col-md-4'>
+            <h3>Filtered by: {{listFilter}} </h3>
+        </div-->
+    </div>
+    <div class='table-responsive'>
+      <table class='table'>
+          <thead>
+              <tr>
+                  <th>
+                      <button class='btn btn-primary' (click)='GetTicket()'>
+                          Consultar
+                      </button>
+                      <!--a href="https://api.github.com/users/AlbertOliva">Albert</a-->
+                  </th>
+              </tr>
+          </thead>
+          <tbody *ngIf='tickets != undefined' >
+            <tr>
+                <div>
+                    <pre>{{tickets}}</pre>
+                    <pre>{{object | json}}</pre>
+                </div>
+            <!-- <div>
+                <td>
+                    <img [src]='tickets.avatar_url' [title]='tickets.login' [style.width.px]='100' [style.margin.px]='10'>
+                </td>
+            </div>
+            <div>
+                <td>id:{{tickets.id}}</td>
+            </div> -->
+            </tr>
+        </tbody>
+      </table>
+</div>
