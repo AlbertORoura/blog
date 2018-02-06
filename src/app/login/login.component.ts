@@ -6,21 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  values = '';
+  tocken:string;
+  entornos:string;
+  email:string;
   passwordEncripted:string;
-  _password: string;
-  get password(): string {
-      return this._password;
-  }
-  set password(value:string) {
-    this._password = value;
-    //this.filteredProducts = this.password ? this.performFilter(this.password) : this.products;
-  }
   
   constructor() { }
   
-  GetToken(passwordEncripted): string {
-    return this.passwordEncripted;
+  GetToken(entornos: string,email:string,passwordEncripted: string) {
+    return this.tocken = 'tocken';
   }
   ngOnInit() {
   }

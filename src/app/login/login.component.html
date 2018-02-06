@@ -7,7 +7,12 @@
 <body>
         <div>&nbsp;</div>
         <label>Entorno:</label>
-        <select id="entornos" name="entorno">
+        <select #d>
+            <option>Selecciona un entorno...</option>
+            <option value="DEV1">DEV1</option>
+            <option value="Pro">Pro</option>
+        </select>
+        <!-- <select id="entornos" name="entorno">
             <option>Selecciona un entorno...</option>
             <option value="0">DEV1</option>
             <option value="1">Pro</option>
@@ -16,10 +21,10 @@
             <label>Entorno:</label>
             <select id="entornos" name="entorno"></select>
             <input type="submit" value="enviar" />
-        </div>
+        </div> -->
         <div>
             <label>Email:</label>&nbsp;
-            <input type="text" />
+            <input #email type="text" />
         </div>
         <div class="row">
             <label>Password:</label>
@@ -27,7 +32,7 @@
         </div>
         <div class="col-md-4">Encoding password in base64: {{passwordEncripted}}</div>
         <p>&nbsp;</p>
-        <button class="btn btn-primary" (click)='GetToken()'> Get Token </button>
+        <button class="btn btn-primary" (click)='GetToken(d.value,email.value,passwordEncripted)'>Get token:</button>{{tocken}}
         <p>&nbsp;</p>
         <div>
             <h3><strong>Chuleta invitaciones</strong></h3>
