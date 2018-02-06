@@ -9,6 +9,7 @@ import { JsonPipe } from '@angular/common';
   styleUrls: ['./ticket.component.css']
 })
 export class TicketComponent implements OnInit {
+  clickMessage = '';
   error: any;
   pageTitle: string = 'Consulta del ticket';
   response:any;
@@ -33,6 +34,7 @@ object: Object = JSON.stringify(this.tickets);
 constructor(private _ticketService: TicketService) { }
   
 GetTicket(_ticketCode, ticketDays) {
+  this.clickMessage = 'Consultando...';
   return this._ticketService.getResponse('b02e0d26-b112-4389-9e3d-a4ddec1183ac', '13')
   .subscribe(tickets => {this.tickets = tickets;},error => this.errorMessage = <any>error);
 }

@@ -1,14 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
-
-
 @Component({
   selector: 'pm-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  password2:string;
+  values = '';
   passwordEncripted:string;
   _password: string;
   get password(): string {
@@ -21,10 +19,13 @@ export class LoginComponent implements OnInit {
   
   constructor() { }
   
-  GetToken(password2): string {
-    return this.passwordEncripted = btoa(this.password2); // encode a string    
+  GetToken(passwordEncripted): string {
+    return this.passwordEncripted;
   }
   ngOnInit() {
   }
 
+  onKey(event:any){
+    this.passwordEncripted = btoa(event.target.value); // encode a string
+  }
 }
