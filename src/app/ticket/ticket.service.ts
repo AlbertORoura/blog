@@ -32,10 +32,7 @@ export class TicketService {
             responseType: 'text' as 'json',
             withCredentials: false
           };
-        // let ticketUrl = 'https://api.applicationinsights.io/v1/apps/8763ef7e-9626-4502-9daf-fdb7e6e3564c/events/exceptions?$search=' + ticketCode;
         let ticketUrl = "https://api.applicationinsights.io/v1/apps/8763ef7e-9626-4502-9daf-fdb7e6e3564c/events/$all?$filter=timestamp%20gt%20now()%20sub%20duration'P"+ticketDays+"D'&$search=" + ticketCode;
-        //let ticketUrl = 'https://api.applicationinsights.io/v1/apps/8763ef7e-9626-4502-9daf-fdb7e6e3564c/events/exceptions?$search=b02e0d26-b112-4389-9e3d-a4ddec1183ac';
-        //let ticketUrl = 'https://api.github.com/users/AlbertOliva';
         console.log("GET WITH HEADERS " + options + ' and with ticket number ' + ticketUrl + ' and the ticketCode is ' + ticketCode);
         return this._http.get<Iticket[]>(ticketUrl, options)
         .do(data => console.log('All: ' + JSON.stringify(data)))
