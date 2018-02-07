@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
   email:string;
   passwordEncripted:string;
   private _urlAPI = '';
+  myDate: any = new Date().toLocaleString();
 
   // constructor(private _http: HttpClient) { }
   constructor() { }

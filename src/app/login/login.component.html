@@ -5,7 +5,7 @@
 </head>
 
 <body>
-        <div>&nbsp;</div>
+        <div>&nbsp;<label>{{myDate | date:'yyyy-MM-ddTHH:mm:ss Z'}}</label></div>        
         <label>Entorno:</label>
         <select #d>
             <option>Selecciona un entorno...</option>
@@ -28,7 +28,7 @@
         </div>
         <div class="row">
             <label>Password:</label>
-            <input (keyup)="onKey($event)"/>
+            <input required  (keyup)="onKey($event)"/>
         </div>
         <div class="col-md-4">Encoding password in base64: {{passwordEncripted}}</div>
         <p>&nbsp;</p>
