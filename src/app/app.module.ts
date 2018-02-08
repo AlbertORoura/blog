@@ -14,6 +14,7 @@ import { LoginComponent } from './login/login.component';
 import { TicketComponent } from './ticket/ticket.component';
 import { ProductService } from './products/product.service';
 import { TicketService } from './ticket/ticket.service';
+import { LoginService } from './login/login.service';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,7 @@ import { TicketService } from './ticket/ticket.service';
       { path: '**', redirectTo: 'ticket', pathMatch: 'full' }
     ])
   ],
-  providers: [ProductService, TicketService],
+  providers: [ProductService, TicketService, LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from 'selenium-webdriver/http';
 import { Observable } from 'rxjs/Observable';
+import { LoginService } from './login.service';
 
 @Component({
   selector: 'pm-login',
@@ -15,15 +16,23 @@ export class LoginComponent implements OnInit {
   private _urlAPI = '';
   myDate: any = new Date().toLocaleString();
 
-  // constructor(private _http: HttpClient) { }
-  constructor() { }
+    //constructor(private _loginService: LoginService) { }
+   constructor() { }
   
   //GetToken(entornos: string,email:string,passwordEncripted: string): Observable<any> {
-    GetToken(entornos: string,email:string,passwordEncripted: string) {
-    //return this.tocken = this._http.get(this._urlAPI);
+  GetToken(entornos: string,email:string,passwordEncripted: string) {
+    //return this.tocken = this._http.get(this._urlAPI).subscribe(data => {console.log(data)});
     return this.tocken = 'Token';
   }
   ngOnInit() {
+    this.utcTime();
+  }
+
+  utcTime(): void {
+      setInterval(() => {
+          this.myDate = new Date();
+          console.log(this.myDate); // just testing if it is working
+      }, 1000);
   }
 
   onKey(event:any){
