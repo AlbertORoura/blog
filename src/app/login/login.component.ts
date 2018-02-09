@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
   utcTime(): void {
       setInterval(() => {
           this.myDate = new Date();
-          console.log(this.myDate); // just testing if it is working
+          //console.log(this.myDate); // just testing if it is working
       }, 1000);
   }
 

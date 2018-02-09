@@ -14,14 +14,15 @@ export class TicketComponent implements OnInit {
   pageTitle: string = 'Consulta del ticket';
   response:any;
   errorMessage: string;
-  _ticketCode:string;
-  get ticketCode(): string {
-    return this._ticketCode;
-}
-set ticketCode(ticketCode:string) {
-  //this.ticketCode = value;
-  this.responseTicket = this.ticketCode ? this.voidMethod(this.ticketCode) : this.tickets;
-}
+  ticketCode: string;
+  ticketDays: string;
+//   get ticketCode(): string {
+//     return this.ticketCode;
+// }
+// set ticketCode(ticketCode:string) {
+//   //this.ticketCode = value;
+//   this.responseTicket = this.ticketCode ? this.voidMethod(this.ticketCode) : this.tickets;
+// }
 responseTicket: Iticket[];
 tickets: Iticket[] = [];
 //object2 : Object = JSON.parse("{\"@hello.context\":\"world\"}");
@@ -33,7 +34,7 @@ object: Object = JSON.stringify(this.tickets);
 
 constructor(private _ticketService: TicketService) { }
   
-GetTicket(_ticketCode, ticketDays) {
+GetTicket(ticketCode:string, ticketDays:string) {
   this.clickMessage = 'Consultando...';
   return this._ticketService.getResponse('b02e0d26-b112-4389-9e3d-a4ddec1183ac', '13')
   .subscribe(tickets => {this.tickets = tickets;},error => this.errorMessage = <any>error);
