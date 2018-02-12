@@ -14,15 +14,9 @@ export class TicketComponent implements OnInit {
   pageTitle: string = 'Consulta del ticket';
   response:any;
   errorMessage: string;
-  ticketCode: string;
-  ticketDays: string;
-//   get ticketCode(): string {
-//     return this.ticketCode;
-// }
-// set ticketCode(ticketCode:string) {
-//   //this.ticketCode = value;
-//   this.responseTicket = this.ticketCode ? this.voidMethod(this.ticketCode) : this.tickets;
-// }
+  ticketCode: string = 'b02e0d26-b112-4389-9e3d-a4ddec1183ac';
+  ticketDays: string = '13';
+
 responseTicket: Iticket[];
 tickets: Iticket[] = [];
 //object2 : Object = JSON.parse("{\"@hello.context\":\"world\"}");
@@ -36,7 +30,7 @@ constructor(private _ticketService: TicketService) { }
   
 GetTicket(ticketCode:string, ticketDays:string) {
   this.clickMessage = 'Consultando...';
-  return this._ticketService.getResponse('b02e0d26-b112-4389-9e3d-a4ddec1183ac', '13')
+  return this._ticketService.getResponse(ticketCode, ticketDays)
   .subscribe(tickets => {this.tickets = tickets;},error => this.errorMessage = <any>error);
 }
 

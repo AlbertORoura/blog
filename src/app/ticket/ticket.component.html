@@ -4,14 +4,14 @@
   </div>
   <div class='panel-body'>
     <div class='row'>
-        <!-- <div class='col-md-2'>Código del ticket:</div>
+        <div class='col-md-2'>Código del ticket:</div>
         <div class='col-md-4'>
             <input #ticketCode type='text' />
-        </div> -->
-        <div>
-            <label>Código del ticket:</label>&nbsp;
-            <input #ticketCode type="text" />
         </div>
+    </div>
+    <div class='col-md-2'>Días que hace de la consulta aprox.:</div>
+    <div class='col-md-4'>
+        <input #dias type='text' />
     </div>
     <div class='row'>
         <!--div class='col-md-4'>
@@ -23,7 +23,7 @@
           <thead>
               <tr>
                   <th>
-                      <button class='btn btn-primary' (click)='GetTicket()'>
+                      <button class='btn btn-primary' (click)='GetTicket(ticketCode.value,dias.value)'>
                           Consultar
                       </button>
                       {{clickMessage}}
