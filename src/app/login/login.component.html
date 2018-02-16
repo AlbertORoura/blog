@@ -5,7 +5,8 @@
 </head>
 
 <body>
-        <div>&nbsp;<label><h1>{{myDate | date:'yyyy-MM-dd HH:mm:ss Z'}}</h1></label></div>        
+        <div>&nbsp;<label><h1>{{convertDate(myDate)}}</h1></label></div>
+        <div>&nbsp;<label><h1>{{myDate | date:'yyyy-MM-dd HH:mm:ss Z'}}</h1></label></div>
         <label>Entorno:</label>
         <select #d>
             <option>Selecciona un entorno...</option>

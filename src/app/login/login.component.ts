@@ -27,10 +27,17 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     this.utcTime();
   }
+  
+  convertDate(myDate){
+    let dateArray=myDate.split("/");
+    let newDate = dateArray[0] + "-" + dateArray[1] + "-" + dateArray[2];
+    return newDate;
+  }
 
   utcTime(): void {
       setInterval(() => {
-          this.myDate = new Date();
+          //this.myDate = new Date();
+          this.convertDate(new Date());
           //console.log(this.myDate); // just testing if it is working
       }, 1000);
   }
