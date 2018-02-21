@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
   email:string;
   passwordEncripted:string;
   private _urlAPI = '';
-  myDate: any = new Date().toLocaleString();
+  myDate: any = new Date();
 
     //constructor(private _loginService: LoginService) { }
    constructor() { }
@@ -26,17 +26,18 @@ export class LoginComponent implements OnInit {
   }
   ngOnInit() {
     this.utcTime();
+    this.convertDate(this.myDate);
   }
   
-  convertDate(myDate){
-    let dateArray=myDate.split("/");
+  convertDate(my2Date){
+    let dateArray=my2Date.toLocaleString().split("/");
     let newDate = dateArray[0] + "-" + dateArray[1] + "-" + dateArray[2];
     return newDate;
   }
 
   utcTime(): void {
       setInterval(() => {
-          //this.myDate = new Date();
+          this.myDate = new Date();
           this.convertDate(new Date());
           //console.log(this.myDate); // just testing if it is working
       }, 1000);
