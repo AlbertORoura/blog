@@ -36,6 +36,13 @@
         <button class="btn btn-primary" (click)='GetToken(d.value,email.value,passwordEncripted)'>Get token:</button>{{tocken}}
         <p>&nbsp;</p>
         <div>
+                <td>
+                    <li *ngFor="let item of items | async">
+                            {{item.Cabina}} {{item.Serie}}
+                    </li>
+                </td>
+        </div>
+        <div>
             <h3><strong>Chuleta invitaciones</strong></h3>
             <ul>
                 <li>Estado de invitaciones:

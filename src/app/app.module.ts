@@ -16,6 +16,12 @@ import { ProductService } from './products/product.service';
 import { TicketService } from './ticket/ticket.service';
 import { LoginService } from './login/login.service';
 
+import { AngularFireModule } from 'angularfire2';
+import { firebaseConfig } from './../environments/firebase.config';
+import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
+import { FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database-deprecated';
+import { AngularFireAuthModule, AngularFireAuth } from 'angularfire2/auth';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +45,10 @@ import { LoginService } from './login/login.service';
       { path: 'welcome', component: WelcomeComponent },
       { path: '', redirectTo: 'ticket', pathMatch: 'full' },
       { path: '**', redirectTo: 'ticket', pathMatch: 'full' }
-    ])
+    ]),
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
   providers: [ProductService, TicketService, LoginService],
   bootstrap: [AppComponent]
