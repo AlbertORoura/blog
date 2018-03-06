@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
   //   console.log(this.items);
   // }
 
-  constructor(database: AngularFireDatabase) {
+  constructor(database: AngularFireDatabase) {    
     this.itemsRef = database.list('Camiones');
     // Use snapshotChanges().map() to store the key
     this.items = this.itemsRef.snapshotChanges().map(changes => {
