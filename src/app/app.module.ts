@@ -12,6 +12,8 @@ import { ProductDetailComponent } from './products/product-detail.component';
 import { WelcomeComponent } from './home/welcome.component';
 import { LoginComponent } from './login/login.component';
 import { TicketComponent } from './ticket/ticket.component';
+import { ListadoCamionesComponent } from './listado-camiones/listado-camiones.component';
+import { ConsejosComponent } from './consejos/consejos.component';
 import { ProductService } from './products/product.service';
 import { TicketService } from './ticket/ticket.service';
 import { LoginService } from './login/login.service';
@@ -22,6 +24,8 @@ import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/dat
 import { FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database-deprecated';
 import { AngularFireAuthModule, AngularFireAuth } from 'angularfire2/auth';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +35,9 @@ import { AngularFireAuthModule, AngularFireAuth } from 'angularfire2/auth';
     ProductDetailComponent,
     WelcomeComponent,
     LoginComponent,
-    TicketComponent
+    TicketComponent,
+    ListadoCamionesComponent,
+    ConsejosComponent
   ],
   imports: [
     BrowserModule,
@@ -41,6 +47,8 @@ import { AngularFireAuthModule, AngularFireAuth } from 'angularfire2/auth';
       { path: 'products', component: ProductListComponent },
       { path: 'products/:id', component: ProductDetailComponent },
       { path: 'login', component: LoginComponent },
+      { path: 'listado-camiones', component: ListadoCamionesComponent },
+      { path: 'consejos', component: ConsejosComponent },
       { path: 'ticket', component: TicketComponent },
       { path: 'welcome', component: WelcomeComponent },
       { path: '', redirectTo: 'ticket', pathMatch: 'full' },
