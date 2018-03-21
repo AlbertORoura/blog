@@ -1,8 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // <-- import required BrowserAnimationsModule
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { CollapsibleModule } from 'angular2-collapsible';
 
 import { AppComponent } from './app.component';
 import { ProductListComponent } from './products/product-list.component';
@@ -41,6 +43,8 @@ import { AngularFireAuthModule, AngularFireAuth } from 'angularfire2/auth';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+    CollapsibleModule,
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot([

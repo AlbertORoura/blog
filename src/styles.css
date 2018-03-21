@@ -1,4 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* @import '~materialize-css/dist/css/materialize.min.css';  */ /* esto cambia el menú y todos los text boxes de tamaño a muy peque*/
+
 li {
     font-size: large;
 }
