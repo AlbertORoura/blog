@@ -1,0 +1,14 @@
+<!--The whole content below can be removed with the new code.-->
+<div style="text-align:center" ng-app="myApp" ng-controller="myCtrl">
+  <h1>
+    TaDa! Welcome to {{title}}!!
+  </h1>
+  <div ng-app="myApp" ng-controller="myCtrl">
+    <h3>Drop down list in Angular</h3>
+    <p>Selecciona el entorno:</p>
+    <select name="singleSelect" ng-model="data.singleSelect">
+      <option *ngFor="let environtment of environtments">{{environtment}}</option>
+      <!-- <option>{{names}}</option> -->
+    </select>
+  </div>
+</div>

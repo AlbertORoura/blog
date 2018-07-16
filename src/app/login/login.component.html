@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+        <div>&nbsp;<label><h1>{{convertDate(myDate)}}</h1></label></div>
+        <!-- <div>&nbsp;<label><h1>{{myDate | date:'yyyy-MM-dd HH:mm:ss Z'}}</h1></label></div> -->
+        <label>Entorno:</label>
+        <select #d>
+            <option>Selecciona un entorno...</option>
+            <option value="DEV1">DEV1</option>
+            <option value="Pro">Pro</option>
+        </select>
+        <!-- <select id="entornos" name="entorno">
+            <option>Selecciona un entorno...</option>
+            <option value="0">DEV1</option>
+            <option value="1">Pro</option>
+        </select>
+        <div id="resto-form" style="display: none;">
+            <label>Entorno:</label>
+            <select id="entornos" name="entorno"></select>
+            <input type="submit" value="enviar" />
+        </div> -->
+        <div>
+            <label>Email:</label>&nbsp;
+            <input #email type="text" />
+        </div>
+        <div class="row">
+            <label>Password:</label>
+            <input required (keyup)="onKey($event)"/>
+        </div>
+        <div class="col-md-4">Encoding password in base64: {{passwordEncripted}}</div>
+        <p>&nbsp;</p>
+        <button class="btn btn-primary" (click)='GetToken(d.value,email.value,passwordEncripted)'>Get token:</button>{{tocken}}
+        <p>&nbsp;</p>
+        <div>
+                <td>
+                    <li *ngFor="let item of items | async">
+                            {{item.Cabina}} {{item.Serie}}
+                    </li>
+                </td>
+        </div>
+        <div>
+            <h3><strong>Chuleta invitaciones</strong></h3>
+            <ul>
+                <li>Estado de invitaciones:
+                    <ul>
+                        <li>Pending = 1</li>
+                        <li>Active = 2</li>
+                        <li>PendingToAccept = 3</li>
+                        <li>PendingToValidate = 4</li>
+                        <li>Rejected = 5</li>
+                        <li>Unlinking = 6</li>
+                    </ul>
+                </li>
+                <li>Invitation type:
+                    <ul>
+                        <li>Admin = 1</li>
+                        <li>Guest = 2</li>
+                        <li>Advisor = 3</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+</body>
+</html>

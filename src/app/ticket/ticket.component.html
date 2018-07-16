@@ -1,0 +1,68 @@
+<head>
+        <script>
+                window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+                ga('create', 'UA-113994420-1', 'auto');
+                
+                // Replace the following lines with the plugins you want to use.
+                ga('require', 'autotrack');
+                ga('require', 'eventTracker');
+                ga('require', 'outboundLinkTracker');
+                ga('require', 'urlChangeTracker');
+                // ...
+                ga('send', 'pageview');
+              </script>
+              <script async src="https://www.google-analytics.com/analytics.js"></script>
+              <script async src="./src/autotrack.js"></script>
+            
+</head>
+<div class="panel panel-primary">
+  <div class='panel-heading'>
+      {{pageTitle}}
+  </div>
+  <div class='panel-body'>
+    <div class='row'>
+        <div class='col-md-2'>Código del ticket:</div>
+        <div class='col-md-4'>
+            <input #ticketCode type='text' />
+        </div>
+    </div>
+    <div class='col-md-2'>Días que hace de la consulta aprox.:</div>
+    <div class='col-md-4'>
+        <input #dias type='text' />
+    </div>
+    <div class='row'>
+        <!--div class='col-md-4'>
+            <h3>Filtered by: {{listFilter}} </h3>
+        </div-->
+    </div>
+    <div class='table-responsive'>
+      <table class='table'>
+          <thead>
+              <tr>
+                  <th>
+                      <button class='btn btn-primary' (click)='GetTicket(ticketCode.value,dias.value)'>
+                          Consultar
+                      </button>
+                      {{clickMessage}}
+                      <!--a href="https://api.github.com/users/AlbertOliva">Albert</a-->
+                  </th>
+              </tr>
+          </thead>
+          <tbody *ngIf='tickets != undefined' >
+            <tr>
+                <div>
+                    <pre>{{tickets}}</pre>
+                    <pre>{{object | json}}</pre>
+                </div>
+            <!-- <div>
+                <td>
+                    <img [src]='tickets.avatar_url' [title]='tickets.login' [style.width.px]='100' [style.margin.px]='10'>
+                </td>
+            </div>
+            <div>
+                <td>id:{{tickets.id}}</td>
+            </div> -->
+            </tr>
+        </tbody>
+      </table>
+</div>
