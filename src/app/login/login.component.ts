@@ -3,6 +3,7 @@ import { HttpClient } from 'selenium-webdriver/http';
 import { Observable } from 'rxjs/Observable';
 import { LoginService } from './login.service';
 
+<<<<<<< HEAD
 import { IItems } from './items';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule, AngularFireDatabase, AngularFireList } from 'angularfire2/database';
@@ -13,12 +14,15 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database-deprecated';
 //import { AngularFireDatabase } from 'angularfire2/database-deprecated';
 
+=======
+>>>>>>> f4524b295c26a23587315343550680a9dc5937aa
 @Component({
   selector: 'pm-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+<<<<<<< HEAD
     tocken: string;
   entornos: string;
   email: string;
@@ -47,11 +51,26 @@ export class LoginComponent implements OnInit {
 
   //GetToken(entornos: string,email:string,passwordEncripted: string): Observable<any> {
   GetToken(entornos: string, email: string, passwordEncripted: string) {
+=======
+  tocken:string;
+  entornos:string;
+  email:string;
+  passwordEncripted:string;
+  private _urlAPI = '';
+  myDate: any = new Date().toLocaleString();
+
+    //constructor(private _loginService: LoginService) { }
+   constructor() { }
+  
+  //GetToken(entornos: string,email:string,passwordEncripted: string): Observable<any> {
+  GetToken(entornos: string,email:string,passwordEncripted: string) {
+>>>>>>> f4524b295c26a23587315343550680a9dc5937aa
     //return this.tocken = this._http.get(this._urlAPI).subscribe(data => {console.log(data)});
     return this.tocken = 'Token';
   }
   ngOnInit() {
     this.utcTime();
+<<<<<<< HEAD
     this.convertDate(this.myDate);
   }
 
@@ -70,6 +89,18 @@ export class LoginComponent implements OnInit {
   }
 
   onKey(event: any) {
+=======
+  }
+
+  utcTime(): void {
+      setInterval(() => {
+          this.myDate = new Date();
+          console.log(this.myDate); // just testing if it is working
+      }, 1000);
+  }
+
+  onKey(event:any){
+>>>>>>> f4524b295c26a23587315343550680a9dc5937aa
     this.passwordEncripted = btoa(event.target.value); // encode a string
   }
 }

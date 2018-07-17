@@ -22,6 +22,7 @@
   },
   "storage": {
     "rules": "storage.rules"
+<<<<<<< HEAD
   },
   "functions": {
     "predeploy": [
@@ -29,5 +30,7 @@
       "npm --prefix %RESOURCE_DIR% run build"
     ],
     "source": "functions"
+=======
+>>>>>>> f4524b295c26a23587315343550680a9dc5937aa
   }
 }

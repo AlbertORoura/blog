@@ -1,5 +1,9 @@
 // Place your settings in this file to overwrite default and user settings.
 {
+<<<<<<< HEAD
     "files.autoSave": "afterDelay",
     "git.ignoreLimitWarning": true
+=======
+    "files.autoSave": "afterDelay"
+>>>>>>> f4524b295c26a23587315343550680a9dc5937aa
 }

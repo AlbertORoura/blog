@@ -1,6 +1,10 @@
 {
   "rules": {
+<<<<<<< HEAD
     ".read": "true",
+=======
+    ".read": "auth != null",
+>>>>>>> f4524b295c26a23587315343550680a9dc5937aa
     ".write": "auth != null"
   }
 }
