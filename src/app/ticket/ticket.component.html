@@ -2,7 +2,7 @@
         <script>
                 window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
                 ga('create', 'UA-113994420-1', 'auto');
-                
+
                 // Replace the following lines with the plugins you want to use.
                 ga('require', 'autotrack');
                 ga('require', 'eventTracker');
@@ -13,20 +13,31 @@
               </script>
               <script async src="https://www.google-analytics.com/analytics.js"></script>
               <script async src="./src/autotrack.js"></script>
-            
+
 </head>
 <div class="panel panel-primary">
   <div class='panel-heading'>
       {{pageTitle}}
   </div>
   <div class='panel-body'>
+      <div>
+          <label>
+            Entorno:
+          </label>
+          <select id="entorno" name="entorno"
+          [(ngModel)]="entorno" class="form-control">
+              <option *ngFor="let ent of entornos" [value]="ent.id">
+                {{ent.name}}
+              </option>
+          </select>
+      </div>
     <div class='row'>
         <div class='col-md-2'>Código del ticket:</div>
         <div class='col-md-4'>
             <input #ticketCode type='text' />
         </div>
     </div>
-    <div class='col-md-2'>Días que hace de la consulta aprox.:</div>
+    <div class='col-md-2'>Días que han pasado de la consulta:</div>
     <div class='col-md-4'>
         <input #dias type='text' />
     </div>
@@ -40,7 +51,7 @@
           <thead>
               <tr>
                   <th>
-                      <button class='btn btn-primary' (click)='GetTicket(ticketCode.value,dias.value)'>
+                      <button class='btn btn-primary' (click)='GetTicket(ticketCode.value,dias.value,entorno)'>
                           Consultar
                       </button>
                       {{clickMessage}}
